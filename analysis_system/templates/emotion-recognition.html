@@ -26,18 +26,23 @@
         <!-- Start of 1st row -->
         <div class="row">
             <!--start of definition-->
-            <div class="col-md-6">
-                <div class="card border border-danger " style="height: 370px">
+            <div class="col-md-5">
+                <div class="card border border-danger " style="height: 512px">
                     <div class="card-body">
                         <h2 class="border-bottom border-danger text-dark"> <i class="fa fa-book text-warning"> </i> Emotion Recognition</h2>
                         <div class="tab-content br-n pn">
                             <div id="navpills-1" class="tab-pane active">
                                 <div class="row">
-                                    <div class="col-md-4"> <img src="{% static 'base/img/Positive_Emoji.jpg' %}" class="img-fluid thumbnail m-r-15 m-t-25" > </div>
-                                    <div class="col-md-8"> <p class="f-s-18 text-dark m-t-21" style="text-align: justify;">Emotion recognition is a technique used in software that allows a program to "read" the emotions on a human face using advanced image processing.
-                                        <p class="f-s-18 text-muted" style="text-align: justify;"
-                                            Emotion recognition refers in psychology to the attribution of emotional states based on the observation of visual and auditory nonverbal cues. Nonverbal cues include facial, vocal, postural, and gestural cues displayed by a sender, that is, a person displaying an emotional reaction.</p>
+                                    <div class="col-md-4"> <img src="{% static 'base/img/Neutral_Emoji.jpg' %}" class="img-fluid thumbnail m-r-15 " > </div>
+                                    <div class="col-md-8"> <p class="f-s-18 text-dark m-t-1" style="text-align: justify;">Emotion recognition is a technique used in software that allows a program to "read" the emotions on a human face using advanced image processing.
+                                        <p class="f-s-18 text-dark" style="text-align: justify;">
+                                            Emotion recognition refers in psychology to the attribution of emotional states based on the observation of visual and auditory nonverbal cues. Nonverbal cues include facial, vocal, postural, and gestural cues displayed by a sender, that is, a person displaying an emotional reaction.
+                                        </p>
+                                        <p class="f-s-18 text-dark" style="text-align: justify;">
+                                            The web application uses emotion recognition to easily determine the student's emotion in regards to the University's services through the use of the google form survey that they have answered.
+                                        </p>
                                     </div>
+                                    <div class="col-md-4"> <img src="{% static 'base/img/Negative_Emoji.jpg' %}" class="img-fluid thumbnail m-r-15 m-t-n9" > </div>
                                 </div>
                             </div>
                         </div>
@@ -46,10 +51,13 @@
             </div>
             <!-- end of Emo recog definition-->
             <!-- Top 5 start 1-->
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="card border border-danger ">
-                    <div class="card-body browser" >
-                        <center><img alt="emotion-top-5" src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img></center>  
+                    <div class="card-body" >
+                        <h2 class="border-bottom border-danger "> <i class="fa fa-star text-warning"> </i> Top 5 Emotions</h2>
+                        <center>
+                            <img alt="emotion-top-5" class="responsive" style="width: 839px" src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
+                        </center>  
                     </div>
                 </div>
             </div>

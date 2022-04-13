@@ -25,17 +25,22 @@
         <div class="row">
             <!--start of definition-->
             <div class="col-md-6">
-                <div class="card border border-danger ">
+                <div class="card border border-danger" style="height: 512px">
                     <div class="card-body">
                         <h2 class="border-bottom border-danger text-dark"> <i class="fa fa-book text-warning"> </i> Sentiment Analysis</h2>
                         <div class="tab-content br-n pn">
                             <div id="navpills-1" class="tab-pane active">
                                 <div class="row">
-                                    <div class="col-md-4"> <img src="{% static 'base/img/Positive_Emoji.jpg' %}" class="img-fluid thumbnail m-r-15 m-t-25" > </div>
-                                    <div class="col-md-8"> <p class="f-s-16 text-dark m-t-21" style="text-align: justify;">Sentiment analysis (or opinion mining) is a natural language processing (NLP) technique used to determine whether data is positive, negative or neutral. Sentiment analysis is often performed on textual data to help businesses monitor brand and product sentiment in customer feedback, and understand customer needs.
-                                        <p class="f-s-17 text-muted" style="text-align: justify;">
-                                            A sentiment analysis can identify mentions conveying positive pieces of content showing strengths, as well as negative mentions, showing bad reviews and problems users face and write about online.</p>
+                                    <div class="col-md-4"> <img src="{% static 'base/img/Positive_Emoji.jpg' %}"  class="img-fluid thumbnail m-r-15 m-t-1" > </div>
+                                    <div class="col-md-8"> <p class="f-s-18 text-dark m-t-10" style="text-align: justify;">Sentiment analysis (or opinion mining) is a natural language processing (NLP) technique used to determine whether data is positive, negative or neutral. Sentiment analysis is often performed on textual data to help businesses monitor brand and product sentiment in customer feedback, and understand customer needs.
+                                        <p class="f-s-18 text-dark" style="text-align: justify;">
+                                            A sentiment analysis can identify mentions conveying positive pieces of content showing strengths, as well as negative mentions, showing bad reviews and problems users face and write about online.
+                                        </p>
+                                        <p class="f-s-18 text-dark" style="text-align: justify;">
+                                            The web application uses sentiment analysis to determine the overall sentiment of the students who gave comments or suggestions about the University's services wether is it a possitive, negative, or neutral.
+                                        </p>
                                     </div>
+                                    <div class="col-md-4"> <img src="{% static 'base/img/Negative_Emoji.jpg' %}"  class="img-fluid thumbnail m-r-15 m-t-n9" > </div>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +53,9 @@
                 <div class="card border border-danger">
                     <div class="card-body ">
                         <h2 class="border-bottom border-danger"> <i class="fa fa-pie-chart text-warning"> </i> Sentiment Analysis Pie Chart </h2>
-            
-                        <center><img alt="sentiment-analysis" src='../../static/base/charts/SA2022-04-12.png'></img></center>
+                        <center>
+                            <img alt="sentiment-analysis" class"responsive" style="width: 559px" src='../../static/base/charts/SA2022-04-12.png'></img>
+                        </center>
                     </div>
                 </div>
             </div>
