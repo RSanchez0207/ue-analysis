@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tensorflow = "*"
+transformers = "*"
+pandas = "*"
+numpy = "*"
+seaborn = "*"
+matplotlib = "*"
+mysqlclient = "*"
+Django = "*"
+PyMySQL = "*"
+SQLAlchemy = "*"
+textblob = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

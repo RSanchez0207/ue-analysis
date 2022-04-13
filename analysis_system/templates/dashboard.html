@@ -1,0 +1,93 @@
+{% include 'css.html' %}
+{% include 'header.html' %}
+{% include 'scripts.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class = "page-wrapper opacity-40">
+    <!-- Bread crumb -->
+
+    <div class="row page-titles border-bottom border-danger">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-dark"><i class="fa fa-tachometer" style="color: black"></i> Dashboard</h3> </div>
+        <div class="col-md-7 align-self-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" >Dashboard</li>
+            </ol>
+        </div>
+    </div>
+    <!-- End Bread crumb -->
+    <!-- Container fluid  -->
+    <div class="container-fluid">
+        <!-- start of row 1-->
+        <div class="row">
+            <!--start of system definition-->
+            <div class="col-md-12">
+                <div class="card border border-danger " >
+                    <div class="card-body">
+                        <h2 class="border-bottom border-danger text-dark"> <i class="fa fa-book text-warning"> </i> System Overview</h2>
+                        <div class="p-20">
+                            <div class="col-md-8"> 
+                                <p class="text-dark m-t-n6 f-s-18" style="text-align: justify;">This web application analyzes the student's emotions and sentiments through machine learning that will used to notify the university for the student's concern or feedback. All of the data that will be used by this application will be coming from the google form that they answered. The google form that they answered will not gathered any identification of the respondent to keep their identity safe.</p>
+                            </div> 
+                        </div>  
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- end of system definition-->
+            <!-- Top 5 start -->
+            <div class="col-lg-6">
+                <div class="card  border border-danger " style="height: 370px">
+                    <div class="card-body browser" >
+                        <h2 class="border-bottom border-danger "> <i class="fa fa-star text-warning"> </i> Top 5 Emotions</h2>
+                        <center>
+                            <img alt="emotion-chart-topfive" src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- Top 5 end -->
+            <!--start of gen sentiment-->
+            <div class="col-lg-6">
+                <div class="card border border-danger">
+                    <div class="card-body ">
+                        <h2 class="border-bottom border-danger"> <i class="fa fa-pie-chart text-warning"> </i> General Sentiment Pie Chart</h2>
+                        <center><img src='../../static/base/charts/SA2022-04-12.png' alt='sentiment-analysis-chart'></img></center>
+                    </div>
+                </div>
+            </div>
+            <!--end of gen sentiment-->
+            <!-- start of row 2-->
+        <div class="row">
+            <!--start of Bar chart Emo recog-->
+            <div class="col-md-12">
+                <div class="card border border-danger">
+                    <div class="card-body">
+                        <h2 class="border-bottom border-danger"> <i class="fa fa-bar-chart-o text-warning"> </i> Emotion Recognition Bar Chart</h2>
+                        <center>
+                            <img alt="emotion-chart" src='../../static/base/charts/ERFIG2022-04-12.png'></img>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- end of Bar chart Emo recog-->
+
+        </div>
+        <!-- end of row 2-->
+        </div>
+        <!-- end of row 1-->
+
+        
+     
+    </div>
+    <!-- end of container fluid-->
+        <!-- footer -->
+        {% include 'footer.html' %}
+        <!-- End footer -->
+</div>
+<!-- end of page wrapper-->
+
+{% endblock %}

@@ -1,0 +1,11 @@
+django
+tensorflow
+transformers
+pandas
+numpy
+seaborn
+matplotlib
+pymysql
+mysqlclient
+sqlalchemy
+textblob

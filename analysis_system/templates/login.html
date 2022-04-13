@@ -1,0 +1,102 @@
+{% include 'scripts.html' %}
+{% include 'css.html' %}
+
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <title>UE Analysis System</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'base/css/lib/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'base/css/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'base/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="fix-header fix-sidebar" style="overflow: hidden;">
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+
+        <div class="unix-login">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{message}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                        <div class="login-content card">
+                            <div class="login-form">
+                                <h4> <b>UE</b> Analysis System</h4>
+                                <form method="POST" action="" autocomplete="off" >
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+                                </div>
+
+                                <div class="checkbox">
+                                        <label class="pull-right">
+        							        <a href="#">Forgot Password?</a>
+        						        </label>
+                                </div>
+                                    <button type="submit" value="login" class="btn btn-info btn-flat m-b-30 m-t-30">Sign in</button>
+                    
+              
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="{% static 'base/js/lib/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{% static 'base/js/lib/bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'base/js/lib/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{% static 'base/js/jquery.slimscroll.js' %}"></script>
+    <!--Menu sidebar -->
+    <script src="{% static 'base/js/sidebarmenu.js' %}"></script>
+    <!--stickey kit -->
+    <script src="{% static 'base/js/lib/sticky-kit-master/dist/sticky-kit.min.js' %}"></script>
+    <!--Custom JavaScript -->
+    <script src="{% static 'base/js/scripts.js' %}"></script>
+
+</body>
+
+</html>
+
+{% endblock %}

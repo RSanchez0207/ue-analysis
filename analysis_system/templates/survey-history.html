@@ -1,0 +1,75 @@
+{% include 'scripts.html' %}
+{% include 'css.html' %}
+{% include 'header.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class = "page-wrapper">
+<!-- Page Wrapper -->
+    <!-- Bread crumb -->
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-dark"><i class="fa fa-calendar"style="color: black"></i> Survey History</h3> </div>
+        <div class="col-md-7 align-self-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href={% url 'dashboard' %}>Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Survey Management</a></li>
+                <li class="breadcrumb-item active">Survey History</li>
+            </ol>
+        </div>
+    </div>
+    <!-- End Bread crumb -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Survey Response Table -->
+            <div class="col-12">
+                <div class="card border border-danger ">
+                    <div class="card-body">
+                        <h2 class="border-bottom border-danger text-dark"> <i class="fa fa-table text-warning"> </i> Survey Table</h2>
+                        <div class="table-responsive m-t-40">
+                            <table id="myTable" class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Survey ID</th>
+                                        <th>Timestamp</th>
+                                        <th>Concern</th>
+                                        <th>General Department</th>
+                                        <th>College Department</th>
+                                        <th>Question 1</th>
+                                        <th>Question 2</th>
+                                        <th>Question 3</th>
+                                        <th>Question 4</th>
+                                        <th>Question 5</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for s in survey_list %}
+                                        <tr>
+                                            <td>{{s.survey_id}}</td>
+                                            <td>{{s.timestamp }}</td>
+                                            <td>{{s.concerns }}</td>
+                                            <td>{{s.generalDepartments}}</td>
+                                            <td>{{s.collegeDepartments}}</td>
+                                            <td>{{s.scoreOne}}</td>
+                                            <td>{{s.scoreTwo}}</td>
+                                            <td>{{s.scoreThree}}</td>
+                                            <td>{{s.scoreFour}}</td>
+                                            <td>{{s.scoreFive}}</td>
+                                            <td>{{s.comments}}</td>   
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Survey Response Table -->
+</div>
+<!-- End Page Wrapper -->
+{% include 'footer.html' %}
+{% endblock %}
