@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/base/img/UE_logo.png'%}">
+    <title>UE Analysis System</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="fix-header fix-sidebar ">
+    
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
+        
+        <div class="header" style="background-color:#FF5757;">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <div class="navbar-header" style="background-color:#FF5757;">
+                    <a class="navbar-brand" href="{% url 'dashboard' %}">
+                        <!-- Logo icon -->
+                        <b><img src="{% static 'base/img/UE_Logo.png' %}" alt="homepage" class="dark-logo" width="40" height="40" /></b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span><img src="{% static 'base/img/textlogo.png' %}" alt="homepage" class="dark-logo"/></span>
+                    </a>
+                </div>
+                <!-- End Logo -->
+                <div class="navbar-collapse">
+                    <!-- toggle and nav items -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="fa fa-bars text-white"></i></a> </li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <!--start Contact us-->
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-address-book-o text-white"> Contact Us</i>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
+                                <ul>
+                                    <li>
+                                        <div class="drop-title">Contact our developers</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center">
+                                            <!-- Dev 1 -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="{% static 'base/img/raighen_formal.jpg' %}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Raighen Sanchez</h5> <span class="mail-desc">sanchez.raighen@ue.edu.ph </span> <span class="time">0976 058 0905</span>
+                                                </div>
+                                            </a>
+                                            <!-- Dev 2 -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="{% static 'base/img/clint_formal.jpg' %}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Rowell Clint Valera</h5> <span class="mail-desc">valera.rowellclint@ue.edu.ph </span> <span class="time">0929 847 5214</span>
+                                                </div>
+                                            </a>
+                                            <!-- Dev 3 -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="{% static 'base/img/Gab_formal.png' %}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Adrian Gabriel Delos Santos</h5> <span class="mail-desc">delossantos.adriangabriel@ue.edu.ph</span> <span class="time">0975 996 4966</span>
+                                                </div>
+                                            </a>
+                                            <!-- Dev 4 -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="{% static 'base/img/luy_formal.jpg' %}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>Enrico Luy</h5> <span class="mail-desc">luy.enricoayrton@ue.edu.ph</span> <span class="time">0917 534 3180</span>
+                                                </div>
+                                            </a>
+                                            <!-- Dev 5 -->
+                                            <a href="#">
+                                                <div class="user-img"> <img src="{% static 'base/img/lorenzo_formal.jpg' %}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="mail-contnet">
+                                                    <h5>lorenzo Gabriel Sampang</h5> <span class="mail-desc">sampang.lorenzogabriel@ue.edu.ph</span> <span class="time">0956 877 5603</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Messages -->
+                        <!--end of contact us-->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End header header -->
+        <!-- Left Sidebar  -->
+        <div class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <ul id="sidebarnav">
+                            
+                            <h5> Date Today: <b>{% now 'M-d-y'%}</b> </h5>
+                            <h5> Showing Results as of <b>{{format}}</b> </h5>
+
+                            <li class="nav-devider m-t-1"></li>
+                            
+                            
+                            <li class="m-t-10">
+                                <a class="nav-link " href="{% url 'dashboard' %}" aria-expanded="false"><i class="fa fa-tachometer" style="color: black"> </i> <span class="hide-menu" > Dashboard</span></a>
+                            </li>
+                            <li class="m-t-10"> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart" style="color: black"></i><span class="hide-menu" > Data Analytics</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                     <li>
+                                    <a class="nav-link" href="{% url 'sentiment-analysis' %}" aria-expanded="false"> <i class="fa fa-thumbs-up" style="color: #71797E"> </i> <span class="hide-menu" > Sentiment Analysis <span ></span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="{% url 'emotion-recognition' %}" aria-expanded="false"> <i class="fa fa-meh-o" style="color: #71797E"> </i> <span class="hide-menu" > Emotion Recognition <span ></span></span></a>
+                                </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item m-t-10">
+                                <a class="nav-link " href="{% url 'privacy-policy' %}" aria-expanded="false"> <i class="fa fa-user-secret" style="color: black"> </i> <span class="hide-menu" > Privacy Policy <span ></span></span></a>
+                            </li>
+                            <li class="nav-item m-t-10">
+                                <a class="nav-link " href="{% url 'logout' %}" aria-expanded="false"> <i class="fa fa-sign-out" style="color: black"> </i> <span class="hide-menu" >Sign Out<span ></span></span></a>
+                            </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+
+            </div>
+            <!-- End Sidebar scroll-->
+        </div>
+        <!-- End Left Sidebar  -->
+
+</body>
+</html>

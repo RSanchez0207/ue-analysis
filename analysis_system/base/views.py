@@ -1,5 +1,3 @@
-from unicodedata import name
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -8,9 +6,11 @@ from django.contrib import messages
 from datetime import timedelta,date
 
 from .models import SentimentOutput, EmotionOutput, SurveyResponse
+from .decorators import allowed_users, unauthenticated_user
 
 # Dashboard View
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['admin','college','student'])
 def dashboard(request):
     today = date.today()
     yesterday = today - timedelta(days = 1)
@@ -19,6 +19,7 @@ def dashboard(request):
 
 # Survey History View
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['admin','college'])
 def history(request):
     today = date.today()
     yesterday = today - timedelta(days = 1)
@@ -28,6 +29,7 @@ def history(request):
 
 # Sentiment View
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['admin','college','student'])
 def sentiment(request):
     sentiment_list = SentimentOutput.objects.all()
     today = date.today()
@@ -37,6 +39,7 @@ def sentiment(request):
 
 # Emotion View
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['admin','college','student'])
 def emotion(request):
     emotion_list = EmotionOutput.objects.all()
     today = date.today()
@@ -46,12 +49,14 @@ def emotion(request):
 
 # Privacy Policy View
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['admin','college','student'])
 def privacy(request):
     today = date.today()
     yesterday = today - timedelta(days = 1)
     format = yesterday.strftime('%b-%d-%y')
     return render(request, 'privacy-policy.html', {'format': format})
 
+@unauthenticated_user
 # Login Page View
 def loginPage(request):
     if request.method == 'POST':

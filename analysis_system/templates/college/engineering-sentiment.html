@@ -1,10 +1,8 @@
 {% include 'css.html' %}
-{% include 'header.html' %}
 {% include 'scripts.html' %}
 
 {% block content %}
 {% load static %}
-{% if user.is_authenticated and user.is_superuser %}
     <div class="page-wrapper">
         <!-- Bread crumb -->
         <div class="row page-titles">
@@ -97,12 +95,4 @@
         <!-- End footer -->
     <!-- End Page wrapper  -->
     <!-- End Wrapper -->
-
-{% elif user.is_authenticated and user.is_staff %}
-    {% include 'college/engineering-sentiment.html'%}
-
-{% else %}
-    {% include 'student/sentiment-student.html' %}
-
-{% endif %}
 {% endblock %}

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     {% load static %}
-{% if user.is_authenticated and user.is_superuser %}
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -121,7 +120,7 @@
                                 
                                 <h5> Date Today: <b>{% now 'M-d-y'%}</b> </h5>
                                 <h5> Showing Results as of <b>{{format}}</b> </h5>
-
+                                <h6>cengg</h6>
                                 <li class="nav-devider m-t-1"></li>
                                 
                                 
@@ -163,12 +162,4 @@
             <!-- End Left Sidebar  -->
 
     </body>
-
-{% elif user.is_authenticated and user.is_staff %}
-    {% include 'college/engineering-header.html' %}
-
-{% else %}
-    {% include 'student/header-student.html' %}
-    
-{% endif %}
 </html>

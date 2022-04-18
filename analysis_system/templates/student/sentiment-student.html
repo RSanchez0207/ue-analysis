@@ -1,10 +1,9 @@
 {% include 'css.html' %}
-{% include 'header.html' %}
 {% include 'scripts.html' %}
 
 {% block content %}
 {% load static %}
-{% if user.is_authenticated and user.is_superuser %}
+
     <div class="page-wrapper">
         <!-- Bread crumb -->
         <div class="row page-titles">
@@ -61,48 +60,14 @@
                     </div>
                 </div>
                 <!-- end of sentiment chart-->
-                <!--start of table-->
-                <div class="col-12">
-                    <div class="card border border-danger ">
-                        <div class="card-body">
-                            <h2 class="border-bottom border-danger text-dark"> <i class="fa fa-table text-warning"> </i> Sentiment Analysis Table</h2>
-                            <div class="table-responsive m-t-40">
-                                <table id="myTable" class="table table-bordered table-striped table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Survey Comment</th>
-                                            <th>Sentiment Polarity</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for s in sentiment_list %}
-                                            <tr>
-                                                <td>{{s.comments }}</td>
-                                                <td>{{s.sentiments}}</td>     
-                                            </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end of table-->
             </div>
             <!-- end of 1st row-->  
         </div>
         <!-- End Container fluid  -->
-        <!-- footer -->
-        <footer class="footer"> © 2022 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a> || UE Analysis System</footer>
-        <!-- End footer -->
+    </div>
     <!-- End Page wrapper  -->
-    <!-- End Wrapper -->
+           <!-- footer -->
+           <footer class="footer"> © 2022 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a> || UE Analysis System</footer>
+           <!-- End footer -->
 
-{% elif user.is_authenticated and user.is_staff %}
-    {% include 'college/engineering-sentiment.html'%}
-
-{% else %}
-    {% include 'student/sentiment-student.html' %}
-
-{% endif %}
 {% endblock %}

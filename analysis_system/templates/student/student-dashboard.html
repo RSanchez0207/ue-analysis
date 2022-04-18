@@ -1,0 +1,176 @@
+{% include 'css.html' %}
+{% include 'scripts.html' %}
+
+{% block content %}
+{% load static %}
+
+    <div class = "page-wrapper opacity-40">
+        <!-- Bread crumb -->
+
+        <div class="row page-titles border-bottom border-danger">
+            <div class="col-md-5 align-self-center">
+                <h3 class="text-dark"><i class="fa fa-tachometer" style="color: black"></i> Dashboard</h3> </div>
+            <div class="col-md-7 align-self-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" >Dashboard</li>
+                </ol>
+            </div>
+        </div>
+        <!-- End Bread crumb -->
+        <!-- Container fluid  -->
+        <div class="container-fluid">
+            <!-- start of row 1-->
+            <div class="row">
+                <!--start of system definition-->
+                <div class="col-md-12">
+                    <div class="card border border-danger " >
+                        <div class="card-body">
+                            <h2 class="border-bottom border-danger text-dark"> <i class="fa fa-book text-warning"> </i> System Overview</h2>
+                            <div class="p-20">
+                                <div class="col-md-8"> 
+                                    <p class="text-dark m-t-n6 f-s-18" style="text-align: justify;">Student View</p>
+                                </div> 
+                            </div>  
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- end of system definition-->
+                <!-- Top 5 start -->
+                <div class="col-lg-7">
+                    <div class="card  border border-danger ">
+                        <div class="card-body" >
+                            <h2 class="border-bottom border-danger "> <i class="fa fa-star text-warning"> </i> Top 5 Emotions</h2>
+                            <center>
+                                <img alt="emotion-chart-topfive" class="responsive" style="width: 839px" src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <!-- Top 5 end -->
+                <!--start of gen sentiment-->
+                <div class="col-lg-5">
+                    <div class="card border border-danger">
+                        <div class="card-body ">
+                            <h2 class="border-bottom border-danger"> <i class="fa fa-pie-chart text-warning"> </i> General Sentiment Pie Chart</h2>
+                            <center>
+                                <img src='../../static/base/charts/SA2022-04-12.png' class"responsive" style="width: 559px" alt='sentiment-analysis-chart'></img>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <!--end of gen sentiment-->
+                <!-- start of row 2-->
+                    <!--start of Bar chart Emo recog-->
+                    <div class="col-md-12">
+                        <div class="card border border-danger">
+                            <div class="card-body">
+                                <h2 class="border-bottom border-danger"> <i class="fa fa-bar-chart-o text-warning"> </i> Emotion Recognition Bar Chart</h2>
+                                <center>
+                                    <img alt="emotion-chart" class="responsive"  src='../../static/base/charts/ERFIG2022-04-12.png'></img>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of Bar chart Emo recog-->
+
+                <!-- end of row 2-->
+                <!-- start of college departments-->
+                <div class="col-md-12">
+                    <div class="card border border-danger">
+                        <div class="card-body">
+                            <h2 class="border-bottom border-danger"> <i class="fa fa-building text-warning"> </i> College Departments</h2>
+                            
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs customtab2 " role="tablist">
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CAS" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">CENGG</span></a> </li>
+                            </ul>
+                            <!--Main Tab panes -->
+                            <div class="tab-content ">
+                                <div class="tab-pane p-20 active" id="CAS" role="tabpanel">
+                                    <!-- start of CAS question tabs-->
+                                    <ul class="nav nav-tabs customtab" role="tablist">
+                                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CAS-Q1" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Communication</span></a> </li>
+                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Professionalism</span></a> </li>
+                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q3" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Connection With Students</span></a> </li>
+                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q4" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Availability and Accessibility</span></a> </li>
+                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q5" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Data Privacy Adherence</span></a> </li>
+                                    </ul>
+                                    <!-- end of CAS question tabs-->
+                                    <!-- start CAS Tab panes -->
+                                    <div class="tab-content ">
+                                        <!-- Start CAS-Q1 Question Tab panes -->
+                                        <div class="tab-pane active" id="CAS-Q1" role="tabpanel">
+                                            <div class="p-20">
+                                                <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
+                                                <center>
+                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16comm.png'></img>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <!-- End CAS-Q1 Question Tab panes -->
+                                        <!-- Start CAS-Q2 Question Tab panes -->
+                                        <div class="tab-pane " id="CAS-Q2" role="tabpanel">
+                                            <div class="p-20">
+                                                <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
+                                                <center>
+                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16prof.png'></img>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <!-- End CAS-Q2 Question Tab panes -->
+                                        
+                                        <!-- Start CAS-Q3 Question Tab panes -->
+                                        <div class="tab-pane " id="CAS-Q3" role="tabpanel">
+                                            <div class="p-20">
+                                                <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
+                                                <center>
+                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16conn.png'></img>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <!-- End CAS-Q3 Question Tab panes -->
+
+                                        <!-- Start CAS-Q4 Question Tab panes -->
+                                        <div class="tab-pane" id="CAS-Q4" role="tabpanel">
+                                            <div class="p-20">
+                                                <h5>Availability and accessibility of online services.</h5>
+                                                <center>
+                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16avail.png'></img>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <!-- End CAS-Q4 Question Tab panes -->
+
+                                        <!-- Start CAS-Q5 Question Tab panes -->
+                                        <div class="tab-pane " id="CAS-Q5" role="tabpanel">
+                                            <div class="p-20">
+                                                <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
+                                                <center>
+                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16dpa.png'></img>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <!-- End CAS-Q5 Question Tab panes -->
+                                    </div>
+                                    <!-- end CAS Tab panes -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of college departments-->
+            </div>
+            <!-- end of row 1-->
+
+            
+        
+        </div>
+        <!-- end of container fluid-->
+            <!-- footer -->
+            <footer class="footer"> © 2022 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a> || UE Analysis System</footer>
+            <!-- End footer -->
+    </div>
+    <!-- end of page wrapper-->
+    
+{% endblock %}
