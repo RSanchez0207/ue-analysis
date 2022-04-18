@@ -117,7 +117,14 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <ul id="sidebarnav">
+                            
+                            <h5> Date Today: <b>{% now 'M-d-y'%}</b> </h5>
+                            <h5> Showing Results as of <b>{{format}}</b> </h5>
+                            
+
                             <li class="nav-devider m-t-1"></li>
+                            
+                            
                             <li class="m-t-10">
                                 <a class="nav-link " href="{% url 'dashboard' %}" aria-expanded="false"><i class="fa fa-tachometer" style="color: black"> </i> <span class="hide-menu" > Dashboard</span></a>
                             </li>

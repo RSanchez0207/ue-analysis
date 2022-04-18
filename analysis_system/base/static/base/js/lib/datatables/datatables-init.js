@@ -26,6 +26,8 @@ $(document).ready(function() {
                     });
                 }
             });
+
+        
             // Order by the grouping
             $('#example tbody').on('click', 'tr.group', function() {
                 var currentOrder = table.order()[0];
@@ -35,11 +37,12 @@ $(document).ready(function() {
                     table.order([2, 'asc']).draw();
                 }
             });
+            
+            $('#example23').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                     'excel', 'pdf'
+                ]
+            });
         });
-    });
-    $('#example23').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
     });
