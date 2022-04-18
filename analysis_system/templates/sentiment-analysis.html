@@ -7,7 +7,7 @@
 {% if user.is_authenticated and user.is_superuser %}
     <div class="page-wrapper">
         <!-- Bread crumb -->
-        <div class="row page-titles">
+        <div class="row page-titles border-bottom border-warning">
             <div class="col-md-5 align-self-center">
                 <h3 class="text-dark"><i class="fa fa-thumbs-up" style="color: black"></i> Sentiment Analysis</h3> </div>
             <div class="col-md-7 align-self-center">
@@ -55,7 +55,7 @@
                         <div class="card-body ">
                             <h2 class="border-bottom border-danger"> <i class="fa fa-pie-chart text-warning"> </i> Sentiment Analysis Pie Chart </h2>
                             <center>
-                                <img alt="sentiment-analysis" class"responsive" style="width: 559px" src='../../static/base/charts/SA2022-04-12.png'></img>
+                                <img alt="sentiment-analysis" class"responsive" style="width: 559px" src={{filename_SA}}></img>
                             </center>
                         </div>
                     </div>

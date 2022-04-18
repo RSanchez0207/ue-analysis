@@ -44,7 +44,7 @@
                         <div class="card-body" >
                             <h2 class="border-bottom border-danger "> <i class="fa fa-star text-warning"> </i> Top 5 Emotions</h2>
                             <center>
-                                <img alt="emotion-chart-topfive" class="responsive" style="width: 839px" src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
+                                <img alt="emotion-chart-topfive" class="responsive" style="width: 839px" src={{filename_ER_TOP}}></img>
                             </center>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <div class="card-body ">
                             <h2 class="border-bottom border-danger"> <i class="fa fa-pie-chart text-warning"> </i> General Sentiment Pie Chart</h2>
                             <center>
-                                <img src='../../static/base/charts/SA2022-04-12.png' class"responsive" style="width: 559px" alt='sentiment-analysis-chart'></img>
+                                <img src={{filename_SA}} class"responsive" style="width: 559px" alt='sentiment-analysis-chart'></img>
                             </center>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                             <div class="card-body">
                                 <h2 class="border-bottom border-danger"> <i class="fa fa-bar-chart-o text-warning"> </i> Emotion Recognition Bar Chart</h2>
                                 <center>
-                                    <img alt="emotion-chart" class="responsive"  src='../../static/base/charts/ERFIG2022-04-12.png'></img>
+                                    <img alt="emotion-chart" class="responsive"  src={{filename_ER}}></img>
                                 </center>
                             </div>
                         </div>
@@ -78,435 +78,87 @@
 
                 <!-- end of row 2-->
                 <!-- start of college departments-->
-                <div class="col-md-12">
-                    <div class="card border border-danger">
-                        <div class="card-body">
-                            <h2 class="border-bottom border-danger"> <i class="fa fa-building text-warning"> </i> College Departments</h2>
-                            
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs customtab2 " role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CAS" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">CAS</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CENGG" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">CENGG</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CEDUC" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">CEDUC</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CDENT" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">CDENT</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CCSS" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">CCSS</span></a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LAW" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">LAW</span></a> </li>
-                            </ul>
-                            <!--Main Tab panes -->
-                            <div class="tab-content ">
-                                <div class="tab-pane p-20 active" id="CAS" role="tabpanel">
-                                    <!-- start of CAS question tabs-->
-                                    <ul class="nav nav-tabs customtab" role="tablist">
-                                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CAS-Q1" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Communication</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Professionalism</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q3" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Connection With Students</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q4" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Availability and Accessibility</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CAS-Q5" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Data Privacy Adherence</span></a> </li>
-                                    </ul>
-                                    <!-- end of CAS question tabs-->
-                                    <!-- start CAS Tab panes -->
-                                    <div class="tab-content ">
-                                        <!-- Start CAS-Q1 Question Tab panes -->
-                                        <div class="tab-pane active" id="CAS-Q1" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16comm.png'></img>
-                                                </center>
+                    <div class="col-md-12">
+                        <div class="card border border-danger">
+                            <div class="card-body">
+                                <h2 class="border-bottom border-danger"> <i class="fa fa-building text-warning"> </i> College Departments</h2>
+                                <!--Main Tab panes -->
+                                <div class="tab-content ">
+                                    <div class="tab-pane  active" id="CAS" role="tabpanel">
+                                        <!-- start of CAS question tabs-->
+                                        <ul class="nav nav-tabs customtab" role="tablist">
+                                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Communication" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Communication</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Professionalism" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Professionalism</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Connection" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Connection With Students</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Availability" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Availability and Accessibility</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Data" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Data Privacy Adherence</span></a> </li>
+                                        </ul>
+                                        <!-- end of CAS question tabs-->
+                                        <!-- start CAS Tab panes -->
+                                        <div class="tab-content ">
+                                            <!-- Start Communication Tab panes -->
+                                            <div class="tab-pane active" id="Communication" role="tabpanel">
+                                                <div class="p-20">
+                                                    <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
+                                                    <center>
+                                                        <img alt="emotion-chart-topfive" class="responsive"  src={{filename_Q1}}></img>
+                                                    </center>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- End CAS-Q1 Question Tab panes -->
-                                        <!-- Start CAS-Q2 Question Tab panes -->
-                                        <div class="tab-pane " id="CAS-Q2" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16prof.png'></img>
-                                                </center>
+                                            <!-- End Communication Tab panes -->
+                                            <!-- Start Professionalis Tab panes -->
+                                            <div class="tab-pane " id="Professionalism" role="tabpanel">
+                                                <div class="p-20">
+                                                    <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
+                                                    <center>
+                                                        <img alt="emotion-chart-topfive" class="responsive"  src={{filename_Q2}}></img>
+                                                    </center>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- End CAS-Q2 Question Tab panes -->
-                                        
-                                        <!-- Start CAS-Q3 Question Tab panes -->
-                                        <div class="tab-pane " id="CAS-Q3" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16conn.png'></img>
-                                                </center>
+                                            <!-- End Professionalis Tab panes -->
+                                            
+                                            <!-- Start Connection Tab panes -->
+                                            <div class="tab-pane " id="Connection" role="tabpanel">
+                                                <div class="p-20">
+                                                    <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
+                                                    <center>
+                                                        <img alt="emotion-chart-topfive" class="responsive"  src={{filename_Q3}}></img>
+                                                    </center>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- End CAS-Q3 Question Tab panes -->
+                                            <!-- End Connection Tab panes -->
 
-                                        <!-- Start CAS-Q4 Question Tab panes -->
-                                        <div class="tab-pane" id="CAS-Q4" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Availability and accessibility of online services.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16avail.png'></img>
-                                                </center>
+                                            <!-- Start Availability Question Tab panes -->
+                                            <div class="tab-pane" id="Availability" role="tabpanel">
+                                                <div class="p-20">
+                                                    <h5>Availability and accessibility of online services.</h5>
+                                                    <center>
+                                                        <img alt="emotion-chart-topfive" class="responsive"  src={{filename_Q4}}></img>
+                                                    </center>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- End CAS-Q4 Question Tab panes -->
+                                            <!-- End Availability Question Tab panes -->
 
-                                        <!-- Start CAS-Q5 Question Tab panes -->
-                                        <div class="tab-pane " id="CAS-Q5" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/LS2022-04-16dpa.png'></img>
-                                                </center>
+                                            <!-- Start Data Question Tab panes -->
+                                            <div class="tab-pane " id="Data" role="tabpanel">
+                                                <div class="p-20">
+                                                    <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
+                                                    <center>
+                                                        <img alt="emotion-chart-topfive" class="responsive"  src={{filename_Q5}}></img>
+                                                    </center>
+                                                </div>
                                             </div>
+                                            <!-- End Data Question Tab panes -->
                                         </div>
-                                        <!-- End CAS-Q5 Question Tab panes -->
+                                        <!-- end CAS Tab panes -->
                                     </div>
-                                    <!-- end CAS Tab panes -->
+                                    <!-- end CAS tab panel -->
                                 </div>
-                                <div class="tab-pane  p-20" id="CENGG" role="tabpanel">
-                                    <!-- start of CENGG question tabs-->
-                                    <ul class="nav nav-tabs customtab" role="tablist">
-                                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CENGG-Q1" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Question 1</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CENGG-Q2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Question 2</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CENGG-Q3" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 3</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CENGG-Q4" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 4</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CENGG-Q5" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 5</span></a> </li>
-                                    </ul>
-                                    <!-- end of CENGG question tabs-->
-                                    <!-- start CENGG Tab panes -->
-                                    <div class="tab-content ">
-                                        <!-- Start CENGG-Q1 Question Tab panes -->
-                                        <div class="tab-pane active" id="CENGG-Q1" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CENGG-Q1 Question Tab panes -->
-                                        <!-- Start CENGG-Q2 Question Tab panes -->
-                                        <div class="tab-pane " id="CENGG-Q2" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CENGG-Q2 Question Tab panes -->
-                                        
-                                        <!-- Start CENGG-Q3 Question Tab panes -->
-                                        <div class="tab-pane " id="CENGG-Q3" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CENGG-Q3 Question Tab panes -->
-
-                                        <!-- Start CENGG-Q4 Question Tab panes -->
-                                        <div class="tab-pane" id="CENGG-Q4" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Availability and accessibility of online services.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CENGG-Q4 Question Tab panes -->
-
-                                        <!-- Start CENGG-Q5 Question Tab panes -->
-                                        <div class="tab-pane " id="CENGG-Q5" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CENGG-Q5 Question Tab panes -->
-                                    </div>
-                                    <!-- end CENGG Tab panes -->
-                                </div>
-                                <div class="tab-pane p-20" id="CEDUC" role="tabpanel">
-                                    <!-- start of CEDUC question tabs-->
-                                    <ul class="nav nav-tabs customtab" role="tablist">
-                                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CEDUC-Q1" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Question 1</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CEDUC-Q2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Question 2</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CEDUC-Q3" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 3</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CEDUC-Q4" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 4</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CEDUC-Q5" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 5</span></a> </li>
-                                    </ul>
-                                    <!-- end of CEDUC question tabs-->
-                                    <!-- start CEDUC Tab panes -->
-                                    <div class="tab-content ">
-                                        <!-- Start CEDUC-Q1 Question Tab panes -->
-                                        <div class="tab-pane active" id="CEDUC-Q1" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CEDUC-Q1 Question Tab panes -->
-                                        <!-- Start CEDUC-Q2 Question Tab panes -->
-                                        <div class="tab-pane " id="CEDUC-Q2" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CEDUC-Q2 Question Tab panes -->
-                                        
-                                        <!-- Start CEDUC-Q3 Question Tab panes -->
-                                        <div class="tab-pane " id="CEDUC-Q3" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CEDUC-Q3 Question Tab panes -->
-
-                                        <!-- Start CEDUC-Q4 Question Tab panes -->
-                                        <div class="tab-pane" id="CEDUC-Q4" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Availability and accessibility of online services.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CEDUC-Q4 Question Tab panes -->
-
-                                        <!-- Start CEDUC-Q5 Question Tab panes -->
-                                        <div class="tab-pane " id="CEDUC-Q5" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CEDUC-Q5 Question Tab panes -->
-                                    </div>
-                                    <!-- end CEDUC Tab panes -->
-                                </div>
-                                <div class="tab-pane p-20" id="CDENT" role="tabpanel">
-                                    <!-- start of CDENT question tabs-->
-                                    <ul class="nav nav-tabs customtab" role="tablist">
-                                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CDENT-Q1" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Question 1</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CDENT-Q2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Question 2</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CDENT-Q3" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 3</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CDENT-Q4" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 4</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CDENT-Q5" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 5</span></a> </li>
-                                    </ul>
-                                    <!-- end of CDENT question tabs-->
-                                    <!-- start CDENT Tab panes -->
-                                    <div class="tab-content ">
-                                        <!-- Start CDENT-Q1 Question Tab panes -->
-                                        <div class="tab-pane active" id="CDENT-Q1" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CDENT-Q1 Question Tab panes -->
-                                        <!-- Start CDENT-Q2 Question Tab panes -->
-                                        <div class="tab-pane " id="CDENT-Q2" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CDENT-Q2 Question Tab panes -->
-                                        
-                                        <!-- Start CDENT-Q3 Question Tab panes -->
-                                        <div class="tab-pane " id="CDENT-Q3" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CDENT-Q3 Question Tab panes -->
-
-                                        <!-- Start CDENT-Q4 Question Tab panes -->
-                                        <div class="tab-pane" id="CDENT-Q4" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Availability and accessibility of online services.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CDENT-Q4 Question Tab panes -->
-
-                                        <!-- Start CDENT-Q5 Question Tab panes -->
-                                        <div class="tab-pane " id="CDENT-Q5" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CDENT-Q5 Question Tab panes -->
-                                    </div>
-                                    <!-- end CDENT Tab panes -->
-                                </div>
-                                <div class="tab-pane p-20" id="CCSS" role="tabpanel">
-                                    <!-- start of CCSS question tabs-->
-                                    <ul class="nav nav-tabs customtab" role="tablist">
-                                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#CCSS-Q1" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Question 1</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CCSS-Q2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Question 2</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CCSS-Q3" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 3</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CCSS-Q4" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 4</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#CCSS-Q5" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 5</span></a> </li>
-                                    </ul>
-                                    <!-- end of CCSS question tabs-->
-                                    <!-- start CCSS Tab panes -->
-                                    <div class="tab-content ">
-                                        <!-- Start CCSS-Q1 Question Tab panes -->
-                                        <div class="tab-pane active" id="CCSS-Q1" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CCSS-Q1 Question Tab panes -->
-                                        <!-- Start CCSS-Q2 Question Tab panes -->
-                                        <div class="tab-pane " id="CCSS-Q2" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CCSS-Q2 Question Tab panes -->
-                                        
-                                        <!-- Start CCSS-Q3 Question Tab panes -->
-                                        <div class="tab-pane " id="CCSS-Q3" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CCSS-Q3 Question Tab panes -->
-
-                                        <!-- Start CCSS-Q4 Question Tab panes -->
-                                        <div class="tab-pane" id="CCSS-Q4" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Availability and accessibility of online services.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CCSS-Q4 Question Tab panes -->
-
-                                        <!-- Start CCSS-Q5 Question Tab panes -->
-                                        <div class="tab-pane " id="CCSS-Q5" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End CCSS-Q5 Question Tab panes -->
-                                    </div>
-                                    <!-- end CCSS Tab panes -->
-                                </div>
-                                <div class="tab-pane p-20" id="LAW" role="tabpanel">
-                                    <!-- start of LAW question tabs-->
-                                    <ul class="nav nav-tabs customtab" role="tablist">
-                                        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#LAW-Q1" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Question 1</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LAW-Q2" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Question 2</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LAW-Q3" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 3</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LAW-Q4" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 4</span></a> </li>
-                                        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LAW-Q5" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Question 5</span></a> </li>
-                                    </ul>
-                                    <!-- end of LAW question tabs-->
-                                    <!-- start LAW Tab panes -->
-                                    <div class="tab-content ">
-                                        <!-- Start LAW-Q1 Question Tab panes -->
-                                        <div class="tab-pane active" id="LAW-Q1" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Prompt delivery of services and response of staff to phone calls, email, and message inquiries (through UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End LAW-Q1 Question Tab panes -->
-                                        <!-- Start LAW-Q2 Question Tab panes -->
-                                        <div class="tab-pane " id="LAW-Q2" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Staff are courteous and approachable to online and on-site visitors.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End LAW-Q2 Question Tab panes -->
-                                        
-                                        <!-- Start LAW-Q3 Question Tab panes -->
-                                        <div class="tab-pane " id="LAW-Q3" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Accommodating and courteous in dealing with student concerns through various online platforms (UE email, Facebook page, etc.).</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End LAW-Q3 Question Tab panes -->
-
-                                        <!-- Start LAW-Q4 Question Tab panes -->
-                                        <div class="tab-pane" id="LAW-Q4" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Availability and accessibility of online services.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End LAW-Q4 Question Tab panes -->
-
-                                        <!-- Start LAW-Q5 Question Tab panes -->
-                                        <div class="tab-pane " id="LAW-Q5" role="tabpanel">
-                                            <div class="p-20">
-                                                <h5>Observes adherence to the compliance with the data privacy guidelines when collecting and processing personal information of students.</h5>
-                                                <center>
-                                                    <img alt="emotion-chart-topfive" class="responsive"  src='../../static/base/charts/ERFIGTOP2022-04-12.png'></img>
-                                                </center>
-                                            </div>
-                                        </div>
-                                        <!-- End LAW-Q5 Question Tab panes -->
-                                    </div>
-                                    <!-- end LAW Tab panes -->
-                                </div>
+                                <!-- end card -->
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- end of college departments-->
+                    <!-- end of college departments-->
             </div>
             <!-- end of row 1-->
 

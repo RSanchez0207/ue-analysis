@@ -183,6 +183,9 @@ h6 {
 }
 
 #main-wrapper {
+  width: 100%;
+}
+#main-wrapper2 {
   height: 100vh;
   width: 100%;
   background: url("/static/base/img/Ue_Background.jpg") ;
@@ -1095,6 +1098,7 @@ h6.h1 {
 .header {
   position: relative;
   z-index: 50;
+  top: 0;
   background: #fff;
   box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -1482,7 +1486,7 @@ textarea {
     -webkit-flex-wrap: nowrap !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 967px) {
   .header {
     position: fixed;
     width: 100%;
@@ -2337,6 +2341,21 @@ textarea {
   border-style: none solid none none;
   border-width: 0 2px 0 0;
   color: #d21919;
+  margin-right: -1px;
+}
+.customvtab3 .tabs-vertical li .nav-link.active,
+.customvtab3 .tabs-vertical li .nav-link:focus,
+.customvtab3 .tabs-vertical li .nav-link:hover {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: #FF8C00 none repeat scroll 0 0;
+  border-color: currentcolor #FF8C00 currentcolor currentcolor;
+  border-image: none;
+  border-style: none solid none none;
+  border-width: 0 2px 0 0;
+  color: #FF8C00;
   margin-right: -1px;
 }
 .tabcontent-border {
@@ -5687,10 +5706,21 @@ tbody tr td:last-child {
   color: #cf5f5f;
   padding: 15px 20px;
 }
+.customtab3 li a.nav-link,
+.profile-tab li a.nav-link {
+  border: 0 none;
+  color: #cfa85f;
+  padding: 15px 20px;
+}
 .customtab li a.nav-link.active,
 .profile-tab li a.nav-link.active {
   border-bottom: 2px solid #d21919;
   color: #d21919;
+}
+.customtab3 li a.nav-link.active,
+.profile-tab li a.nav-link.active {
+  border-bottom: 2px solid #e9ab2e;
+  color: #e9ab2e;
 }
 .card-two {
   position: relative;
@@ -6610,7 +6640,7 @@ tbody tr td:last-child {
   font-size: 14px;
 }
 .header-search i {
-  position: absolute;
+  position: fixed;
   right: 5px;
   top: 5px;
   cursor: pointer;

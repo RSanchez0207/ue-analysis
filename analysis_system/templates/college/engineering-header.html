@@ -28,10 +28,10 @@
         <!-- Main wrapper  -->
         <div id="main-wrapper">
             
-            <div class="header" style="background-color:#FF5757;">
+            <div class="header" style="background-color:#FF8C00;">
                 <nav class="navbar top-navbar navbar-expand-md navbar-light">
                     <!-- Logo -->
-                    <div class="navbar-header" style="background-color:#FF5757;">
+                    <div class="navbar-header" style="background-color:#FF8C00;">
                         <a class="navbar-brand" href="{% url 'dashboard' %}">
                             <!-- Logo icon -->
                             <b><img src="{% static 'base/img/UE_Logo.png' %}" alt="homepage" class="dark-logo" width="40" height="40" /></b>
@@ -41,6 +41,7 @@
                         </a>
                     </div>
                     <!-- End Logo -->
+                    <!-- start of collapse-->
                     <div class="navbar-collapse">
                         <!-- toggle and nav items -->
                         <ul class="navbar-nav mr-auto mt-md-0">
@@ -117,10 +118,10 @@
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
                             <ul id="sidebarnav">
-                                
-                                <h5> Date Today: <b>{% now 'M-d-y'%}</b> </h5>
-                                <h5> Showing Results as of <b>{{format}}</b> </h5>
-                                <h6>cengg</h6>
+                                <li >
+                                    <a class="f-s-13 text-dark"> <i class="fa fa-calendar" style="color: black"> </i> <span class="hide-menu" > Date Today: <b>{% now 'M-d-y'%}</b> </span></a>
+                                    <a class="f-s-13 m-t-n5 m-b-10 text-dark" > <i class="fa fa-calendar-o" style="color: black"> </i> <span class="hide-menu" > Showing Results as of <b>{{format}}</b> </span></a>
+                                </li>
                                 <li class="nav-devider m-t-1"></li>
                                 
                                 
