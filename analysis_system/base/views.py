@@ -11,7 +11,9 @@ from .decorators import allowed_users, unauthenticated_user
 today = date.today()
 yesterday = today - timedelta(days = 1)
 
-format = yesterday.strftime('%b-%d-%y')
+format_today = today.strftime('%b-%d-%y')
+format_yesterday = yesterday.strftime('%b-%d-%y')
+
 static_dir_str_charts = "../../static/base/charts/"
 filename_SA =  static_dir_str_charts + "SA" + str(yesterday) + ".png"
 filename_ER =  static_dir_str_charts + "ERFIG" + str(yesterday) + ".png"
@@ -28,7 +30,8 @@ filename_Q5 = static_dir_str_charts + "LS" + str(yesterday) + "dpa.png"
 @allowed_users(allowed_roles=['admin','college','student'])
 def dashboard(request):
 
-    return render(request, 'dashboard.html', {'format': format, 
+    return render(request, 'dashboard.html', {'format_today': format_today,
+                                            'format_yesterday': format_yesterday, 
                                             'filename_SA': filename_SA,
                                             'filename_ER': filename_ER,
                                             'filename_ER_TOP': filename_ER_TOP,
@@ -43,7 +46,7 @@ def dashboard(request):
 @allowed_users(allowed_roles=['admin','college'])
 def history(request):
     survey_list = SurveyResponse.objects.all()
-    return render(request, 'survey-history.html', {'survey_list': survey_list, 'format': format})
+    return render(request, 'survey-history.html', {'survey_list': survey_list, 'format_today': format_today, 'format_yesterday': format_yesterday})
 
 # Sentiment View
 @login_required(login_url='login')
@@ -51,7 +54,8 @@ def history(request):
 def sentiment(request):
     sentiment_list = SentimentOutput.objects.all()
     return render(request, 'sentiment-analysis.html',{'sentiment_list': sentiment_list, 
-                                                        'format': format,
+                                                        'format_today': format_today,
+                                                        'format_yesterday': format_yesterday,
                                                         'filename_SA': filename_SA})
 
 # Emotion View
@@ -60,7 +64,8 @@ def sentiment(request):
 def emotion(request):
     emotion_list = EmotionOutput.objects.all()
     return render(request, 'emotion-recognition.html', {'emotion_list': emotion_list,
-                                                        'format': format,
+                                                        'format_today': format_today,
+                                                        'format_yesterday': format_yesterday,
                                                         'filename_ER': filename_ER,
                                                         'filename_ER_TOP': filename_ER_TOP})
 
@@ -68,7 +73,7 @@ def emotion(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin','college','student'])
 def privacy(request):
-    return render(request, 'privacy-policy.html', {'format': format})
+    return render(request, 'privacy-policy.html', {'format_today': format_today,'format_yesterday': format_yesterday })
 
 # Login Page View
 def loginPage(request):
