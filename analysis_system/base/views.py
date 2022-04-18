@@ -50,14 +50,19 @@ def history(request):
 @allowed_users(allowed_roles=['admin','college','student'])
 def sentiment(request):
     sentiment_list = SentimentOutput.objects.all()
-    return render(request, 'sentiment-analysis.html',{'sentiment_list': sentiment_list, 'format': format })
+    return render(request, 'sentiment-analysis.html',{'sentiment_list': sentiment_list, 
+                                                        'format': format,
+                                                        'filename_SA': filename_SA})
 
 # Emotion View
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin','college','student'])
 def emotion(request):
     emotion_list = EmotionOutput.objects.all()
-    return render(request, 'emotion-recognition.html', {'emotion_list': emotion_list, 'format': format})
+    return render(request, 'emotion-recognition.html', {'emotion_list': emotion_list,
+                                                        'format': format,
+                                                        'filename_ER': filename_ER,
+                                                        'filename_ER_TOP': filename_ER_TOP})
 
 # Privacy Policy View
 @login_required(login_url='login')
