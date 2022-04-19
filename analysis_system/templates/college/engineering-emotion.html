@@ -73,34 +73,6 @@
                     </div>
                 </div>
                 <!-- end of Bar chart Emo recog-->
-                <!--start of table-->
-                <div class="col-12">
-                    <div class="card border border-warning ">
-                        <div class="card-body">
-                            <h2 class="border-bottom border-warning text-dark"> <i class="fa fa-table text-warning"> </i> Emotion Recognition Table</h2>
-                            <div class="table-responsive m-t-40">
-                                <table id="myTable" class="table table-bordered table-striped table-hover">
-                                    <thead>
-                                        <tr>
-
-                                            <th>Emotion Label</th>
-                                            <th>Accuracy Score</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for e in emotion_list %}
-                                            <tr>
-                                                <td>{{e.label}}</td>
-                                                <td>{{e.score}}</td>
-                                            </tr> 
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end of table-->
             </div>
             <!-- End PAge Content -->
         </div>
