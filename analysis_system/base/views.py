@@ -19,11 +19,19 @@ filename_SA =  static_dir_str_charts + "SA" + str(yesterday) + ".png"
 filename_ER =  static_dir_str_charts + "ERFIG" + str(yesterday) + ".png"
 filename_ER_TOP = static_dir_str_charts + "ERFIGTOP" + str(yesterday) + ".png"
 
+# Overall Filename
 filename_Q1 = static_dir_str_charts + "LS" + str(yesterday) + "comm.png"
 filename_Q2 = static_dir_str_charts + "LS" + str(yesterday) + "prof.png"
 filename_Q3 = static_dir_str_charts + "LS" + str(yesterday) + "conn.png"
 filename_Q4 = static_dir_str_charts + "LS" + str(yesterday) + "avail.png"
 filename_Q5 = static_dir_str_charts + "LS" + str(yesterday) + "dpa.png"
+
+# Engineering Results
+cengg_filename_Q1 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "comm.png"
+cengg_filename_Q2 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "prof.png"
+cengg_filename_Q3 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "conn.png"
+cengg_filename_Q4 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "avail.png"
+cengg_filename_Q5 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "dpa.png"
 
 # Dashboard View
 @login_required(login_url='login')
@@ -39,7 +47,13 @@ def dashboard(request):
                                             'filename_Q2': filename_Q2,
                                             'filename_Q3': filename_Q3,
                                             'filename_Q4': filename_Q4,
-                                            'filename_Q5': filename_Q5,})
+                                            'filename_Q5': filename_Q5,
+                                            'cengg_filename_Q1': cengg_filename_Q1,
+                                            'cengg_filename_Q2': cengg_filename_Q2,
+                                            'cengg_filename_Q3': cengg_filename_Q3,
+                                            'cengg_filename_Q4': cengg_filename_Q4,
+                                            'cengg_filename_Q5': cengg_filename_Q5,})
+
 
 # Survey History View
 @login_required(login_url='login')

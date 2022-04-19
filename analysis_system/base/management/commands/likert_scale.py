@@ -48,7 +48,7 @@ class Command(BaseCommand):
         filename = "LS" + str(yesterday)
         static_dir_str_charts = "base/static/base/charts/"
 
-        # Plot comparison using Seaborn
+        # Plot comparison using Seaborn Overall Results
         sns.catplot(x='College Departments', hue='Communication', data=df, kind='count', height=6, aspect=1.5)
         plt.savefig(static_dir_str_charts + filename + 'comm.png')
 
@@ -56,7 +56,7 @@ class Command(BaseCommand):
         plt.savefig(static_dir_str_charts + filename + 'prof.png')
 
         sns.catplot(x='College Departments', hue='Connection With Students', data=df, kind='count', height=6, aspect=1.5)
-        plt.savefig(static_dir_str_charts + filename + 'conn.png')
+        plt.savefig(static_dir_str_charts +  filename + 'conn.png')
 
         sns.catplot(x='College Departments', hue='Availability and Accessibility', data=df, kind='count', height=6, aspect=1.5)
         plt.savefig(static_dir_str_charts + filename + 'avail.png')
@@ -64,5 +64,21 @@ class Command(BaseCommand):
         sns.catplot(x='College Departments', hue='Data Privacy Adherence', data=df, kind='count', height=6, aspect=1.5)
         plt.savefig(static_dir_str_charts + filename + 'dpa.png')
 
+        # Engineering Results
+        dfEngineering = df.loc[df['College Departments'] == 'CENGG']
 
+        sns.catplot(x='College Departments', hue='Communication', data=dfEngineering, kind='count', height=6, aspect=1.5)
+        plt.savefig(static_dir_str_charts + 'CENGG' + filename + 'comm.png')
+
+        sns.catplot(x='College Departments', hue='Professionalism', data=dfEngineering, kind='count', height=6, aspect=1.5)
+        plt.savefig(static_dir_str_charts + 'CENGG' + filename + 'prof.png')
+
+        sns.catplot(x='College Departments', hue='Connection With Students', data=dfEngineering, kind='count', height=6, aspect=1.5)
+        plt.savefig(static_dir_str_charts + 'CENGG' + filename + 'conn.png')
+
+        sns.catplot(x='College Departments', hue='Availability and Accessibility', data=dfEngineering, kind='count', height=6, aspect=1.5)
+        plt.savefig(static_dir_str_charts +  'CENGG' + filename + 'avail.png')
+
+        sns.catplot(x='College Departments', hue='Data Privacy Adherence', data=dfEngineering, kind='count', height=6, aspect=1.5)
+        plt.savefig(static_dir_str_charts + 'CENGG' + filename + 'dpa.png')
 
