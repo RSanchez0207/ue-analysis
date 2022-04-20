@@ -41,7 +41,7 @@ $(document).ready(function() {
             $('#example23').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                     'excel', 'pdf'
+                     'excel', 'print'
                 ]
             });
         });
