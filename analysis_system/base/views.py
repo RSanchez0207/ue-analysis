@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from datetime import timedelta,date
 
-from .models import SentimentOutput, EmotionOutput, SurveyResponse
-from .decorators import allowed_users, unauthenticated_user
+from .models import SentimentOutput, EmotionOutput, SurveyResponse, CENGGSentimentOutput, CENGGEmotionOutput
+from .decorators import allowed_users
 
 today = date.today()
 yesterday = today - timedelta(days = 1)
@@ -32,6 +32,9 @@ cengg_filename_Q2 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "prof.p
 cengg_filename_Q3 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "conn.png"
 cengg_filename_Q4 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "avail.png"
 cengg_filename_Q5 = static_dir_str_charts + "CENGGLS" + str(yesterday) + "dpa.png"
+cengg_SA = static_dir_str_charts + "cengg_SA" + str(yesterday) + ".png"
+cengg_ER = static_dir_str_charts + "cengg_ERFIG" + str(yesterday) + ".png"
+cengg_ER_TOP = static_dir_str_charts + "cengg_ERFIGTOP" + str(yesterday) + ".png"
 
 # General Overall Results
 general_filename_Q1 = static_dir_str_charts + "LS" + str(yesterday) + "GENcomm.png"
@@ -64,7 +67,10 @@ def dashboard(request):
                                             'general_filename_Q2': general_filename_Q2,
                                             'general_filename_Q3': general_filename_Q3,
                                             'general_filename_Q4': general_filename_Q4,
-                                            'general_filename_Q5': general_filename_Q5,})
+                                            'general_filename_Q5': general_filename_Q5,
+                                            'cengg_SA': cengg_SA,
+                                            'cengg_ER': cengg_ER,
+                                            'cengg_ER_TOP': cengg_ER_TOP })
 
 
 # Survey History View
@@ -72,28 +78,39 @@ def dashboard(request):
 @allowed_users(allowed_roles=['admin','college'])
 def history(request):
     survey_list = SurveyResponse.objects.all()
-    return render(request, 'survey-history.html', {'survey_list': survey_list, 'format_today': format_today, 'format_yesterday': format_yesterday})
+    cengg_survey_list = SurveyResponse.objects.filter(collegeDepartments = 'College of Engineering (CENGG)')
+    return render(request, 'survey-history.html', {'survey_list': survey_list, 
+                                                   'format_today': format_today, 
+                                                   'format_yesterday': format_yesterday,
+                                                   'cengg_survey_list': cengg_survey_list,})
 
 # Sentiment View
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin','college','student'])
 def sentiment(request):
     sentiment_list = SentimentOutput.objects.all()
+    cengg_sentiment_list = CENGGSentimentOutput.objects.all()
     return render(request, 'sentiment-analysis.html',{'sentiment_list': sentiment_list, 
                                                         'format_today': format_today,
                                                         'format_yesterday': format_yesterday,
-                                                        'filename_SA': filename_SA})
+                                                        'filename_SA': filename_SA,
+                                                        'cengg_sentiment_list': cengg_sentiment_list,
+                                                        'cengg_SA': cengg_SA})
 
 # Emotion View
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin','college','student'])
 def emotion(request):
     emotion_list = EmotionOutput.objects.all()
+    cengg_emotion_list = CENGGEmotionOutput.objects.all()
     return render(request, 'emotion-recognition.html', {'emotion_list': emotion_list,
                                                         'format_today': format_today,
                                                         'format_yesterday': format_yesterday,
                                                         'filename_ER': filename_ER,
-                                                        'filename_ER_TOP': filename_ER_TOP})
+                                                        'filename_ER_TOP': filename_ER_TOP,
+                                                        'cengg_ER': cengg_ER,
+                                                        'cengg_ER_TOP': cengg_ER_TOP,
+                                                        'cengg_emotion_list': cengg_emotion_list})
 
 # Privacy Policy View
 @login_required(login_url='login')

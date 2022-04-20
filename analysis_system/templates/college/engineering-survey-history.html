@@ -1,11 +1,5 @@
-{% include 'scripts.html' %}
-{% include 'css.html' %}
-{% include 'header.html' %}
-
 {% block content %}
 {% load static %}
-
-{% if user.is_authenticated and user.is_superuser %}
 
     <div class = "page-wrapper">
     <!-- Page Wrapper -->
@@ -35,8 +29,6 @@
                                         <tr>
                                             <th><b>Survey ID</b></th>
                                             <th><b>Timestamp</b></th>
-                                            <th><b>Concern</b></th>
-                                            <th><b>General Department</b></th>
                                             <th><b>College Department</b></th>
                                             <th><b>Question 1</b></th>
                                             <th><b>Question 2</b></th>
@@ -47,19 +39,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for s in survey_list %}
+                                        {% for cengg in cengg_survey_list %}
                                         <tr>
-                                            <td>{{s.survey_id}}</td>
-                                            <td>{{s.timestamp }}</td>
-                                            <td>{{s.concerns }}</td>
-                                            <td>{{s.generalDepartments}}</td>
-                                            <td>{{s.collegeDepartments}}</td>
-                                            <td>{{s.scoreOne}}</td>
-                                            <td>{{s.scoreTwo}}</td>
-                                            <td>{{s.scoreThree}}</td>
-                                            <td>{{s.scoreFour}}</td>
-                                            <td>{{s.scoreFive}}</td>
-                                            <td>{{s.comments}}</td>   
+                                            <td>{{cengg.survey_id}}</td>
+                                            <td>{{cengg.timestamp }}</td>
+                                            <td>{{cengg.collegeDepartments}}</td>
+                                            <td>{{cengg.scoreOne}}</td>
+                                            <td>{{cengg.scoreTwo}}</td>
+                                            <td>{{cengg.scoreThree}}</td>
+                                            <td>{{cengg.scoreFour}}</td>
+                                            <td>{{cengg.scoreFive}}</td>
+                                            <td>{{cengg.comments}}</td>   
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -75,8 +65,4 @@
     <!-- End Page Wrapper -->
     <footer class="footer"> © 2022 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a> || UE Analysis System</footer>
 
-{% else %}
-    {% include 'college/engineering-survey-history.html' %}
-
-{% endif %}
 {% endblock %}

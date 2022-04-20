@@ -22,6 +22,7 @@ def __str__(self):
 class EmotionOutput(models.Model):
     label = models.CharField(max_length=20, primary_key=True)
     score = models.FloatField()
+    comments = models.CharField(max_length=100, null=True)
     class Meta:
         db_table = "emotionoutput"
 def __str__(self):
@@ -33,5 +34,24 @@ class SentimentOutput(models.Model):
     sentiments = models.CharField(max_length=30)
     class Meta:
         db_table = "sentimentoutput"
+def __str__(self):
+    return self.label
+
+# CENGG Sentiment Output from SA
+class CENGGSentimentOutput(models.Model):
+    comments = models.CharField(max_length=100, primary_key=True)
+    sentiments = models.CharField(max_length=30)
+    class Meta:
+        db_table = "cenggsentimentoutput"
+def __str__(self):
+    return self.label
+
+# CENGG ER Output from ER
+class CENGGEmotionOutput(models.Model):
+    label = models.CharField(max_length=100)
+    score = models.CharField(max_length=30)
+    comments = models.CharField(max_length=100, primary_key=True)
+    class Meta:
+        db_table = "cenggemotionoutput"
 def __str__(self):
     return self.label

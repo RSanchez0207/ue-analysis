@@ -1,7 +1,6 @@
 from transformers import TFRobertaForSequenceClassification, pipeline
 from datetime import date, timedelta
 from django.core.management.base import BaseCommand
-from sqlalchemy import create_engine
 
 import seaborn as sns
 import pandas as pd
@@ -11,7 +10,7 @@ import json
 import csv
 
 class Command(BaseCommand):
-    help = "A command to run Emotion Recognition"
+    help = "A command to run Emotion Recognition for CENGG"
 
     def handle(self, *args, **options):
         
@@ -21,31 +20,32 @@ class Command(BaseCommand):
         # Get date yesterday
         yesterday = today - timedelta(days = 1)
 
-        # Create Filename
-        filename = "ER" + str(yesterday)
-
         count = 0
 
         model = TFRobertaForSequenceClassification.from_pretrained("arpanghoshal/EmoRoBERTa")
 
         emotion = pipeline('sentiment-analysis', 
                             model='arpanghoshal/EmoRoBERTa')
+     
 
         # Get Spreadsheet from Google Form
         sheetID = '1i73xYnbaWpPsx6RjaUljmC3zIo8VP0muRzls8-lP8MY'
         df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{sheetID}/export?format=csv")
-        df["comments"].fillna("None", inplace=True)
         df["comments"].fillna("No Comment", inplace=True)
         df.loc[df['comments'] == 'None', 'comments'] = 'No Comment'
+  
+        # Rename Value
+        df.loc[df['collegeDepartments'] == 'College of Engineering (CENGG)', 'collegeDepartments'] = 'CENGG'
+        dfEngineering = df.loc[df['collegeDepartments'] == 'CENGG']
 
-        comment_list = df["comments"].tolist()
+        comment_list = dfEngineering["comments"].tolist()
 
         emotion_labels = emotion(comment_list)
 
         # Create Filename For Figures
-        filename = "ER" + str(yesterday)
-        filename_fig = "ERFIG" + str(yesterday)
-        filename_top = "ERFIGTOP" + str(yesterday)
+        filename = "cengg_ER" + str(yesterday)
+        filename_fig = "cengg_ERFIG" + str(yesterday)
+        filename_top = "cengg_ERFIGTOP" + str(yesterday)
         static_dir_str_charts = "base/static/base/charts/"
 
         # Dump emotion recognition output to JSON file
@@ -71,7 +71,7 @@ class Command(BaseCommand):
 
         # Open ER CSV File
         df_ER = pd.read_csv("results/csv/" + str(filename) + ".csv")
-        
+
         df_ER['comments'] = comment_list
         df_ER.to_csv("results/csv/" + str(filename) + ".csv", index=False)
 
