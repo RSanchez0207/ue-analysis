@@ -1,26 +1,31 @@
-import pandas as pd
-from datetime import date, timedelta
 from django.core.management.base import BaseCommand
 
 # Sentiment Analysis
-from textblob import TextBlob
 import pandas as pd
+from datetime import date, timedelta
 import seaborn as sns
 import matplotlib.pyplot as plt
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 class Command(BaseCommand):
     help = "A command to run Sentiment Analysis"
 
     def handle(self, *args, **options):
-        def get_sentiment(text):
-            blob = TextBlob(text)
-            sentiment = blob.sentiment.polarity
-            if sentiment > 0:
+        def sentiment_score(sentence):
+            sid_obj = SentimentIntensityAnalyzer()
+
+            sentiment_dict = sid_obj.polarity_scores(sentence)
+            
+            if sentiment_dict['compound'] >= 0.05 :
                 result = "Positive"
-            elif sentiment < 0:
+        
+            elif sentiment_dict['compound'] <= - 0.05 :
                 result = "Negative"
-            else:
+
+            else :
                 result = "Neutral"
+
             return result
 
         # Open File
@@ -33,7 +38,7 @@ class Command(BaseCommand):
         filename = "SA" + str(yesterday)
         static_dir_str_charts = "base/static/base/charts/"
 
-        df["sentiments"] = df["comments"].apply(get_sentiment)
+        df["sentiments"] = df["comments"].apply(sentiment_score)
         df[['sentiments','comments']].to_csv("results/csv/" + str(filename) + '.csv', index=False)
 
         df_SA = pd.read_csv("results/csv/" + str(filename) + '.csv')

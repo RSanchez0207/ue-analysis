@@ -1,26 +1,31 @@
-import pandas as pd
-from datetime import date, timedelta
 from django.core.management.base import BaseCommand
 
 # Sentiment Analysis
-from textblob import TextBlob
 import pandas as pd
+from datetime import date, timedelta
 import seaborn as sns
 import matplotlib.pyplot as plt
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 class Command(BaseCommand):
     help = "A command to run Sentiment Analysis for CENGG Department"
 
     def handle(self, *args, **options):
-        def get_sentiment(text):
-            blob = TextBlob(text)
-            sentiment = blob.sentiment.polarity
-            if sentiment > 0:
+        def sentiment_score(sentence):
+            sid_obj = SentimentIntensityAnalyzer()
+
+            sentiment_dict = sid_obj.polarity_scores(sentence)
+            
+            if sentiment_dict['compound'] >= 0.05 :
                 result = "Positive"
-            elif sentiment < 0:
+        
+            elif sentiment_dict['compound'] <= - 0.05 :
                 result = "Negative"
-            else:
+
+            else :
                 result = "Neutral"
+
             return result
 
         # Open File
@@ -38,7 +43,7 @@ class Command(BaseCommand):
 
         # Select all CENGG
         dfEngineering = df.loc[df['collegeDepartments'] == 'CENGG']
-        dfEngineering["sentiments"] = dfEngineering["comments"].apply(get_sentiment)
+        dfEngineering["sentiments"] = dfEngineering["comments"].apply(sentiment_score)
         dfEngineering[['sentiments','comments']].to_csv("results/csv/" + str(cengg_filename) + '.csv', index=False)
 
         df_cengg_SA = pd.read_csv("results/csv/" + str(cengg_filename) + '.csv')

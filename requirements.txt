@@ -8,4 +8,4 @@ matplotlib
 pymysql
 mysqlclient
 sqlalchemy
-textblob
+vader-multi
