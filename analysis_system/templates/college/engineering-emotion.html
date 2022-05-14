@@ -84,7 +84,6 @@
                                         <tr>
                                             
                                             <th><b>Emotion Label</b></th>
-                                            <th><b>Accuracy Score</b></th>
                                             <th><b>Comments</b></th>
                                         </tr>
                                     </thead>
@@ -92,7 +91,6 @@
                                         {% for cengg in cengg_emotion_list %}
                                             <tr>
                                                 <td>{{cengg.label}}</td>
-                                                <td>{{cengg.score}}</td>
                                                 <td>{{cengg.comments}}</td>
                                             </tr> 
                                         {% endfor %}

@@ -87,7 +87,6 @@
                                         <tr>
                                            
                                             <th><b>Emotion Label</b></th>
-                                            <th><b>Accuracy Score</b></th>
                                             <th><b>Comments</b></th>
                                         </tr>
                                     </thead>
@@ -95,7 +94,6 @@
                                         {% for e in emotion_list %}
                                             <tr>
                                                 <td>{{e.label}}</td>
-                                                <td>{{e.score}}</td>
                                                 <td>{{e.comments}}</td>
                                             </tr> 
                                         {% endfor %}
